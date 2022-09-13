@@ -1,0 +1,198 @@
+.questions {
+    margin-bottom: 110px;
+    position: relative;
+
+    &__title {
+        margin: 192px 0px 40px 32.152%;
+
+        h1 {
+            width: 90%;
+            @include title();
+        }
+
+        @include maxWidth($mobile-with) {
+            margin-top: 77px !important;
+            margin-left: 20px !important;
+            margin-bottom: 11px !important;
+        }
+    }
+
+    &-main {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        margin: 0px 9.02% 0px 7.08%;
+    }
+
+    &__form {
+        @include form_animation;
+
+        input,
+        textarea {
+            width: 598px;
+            border: 4px solid #728BAD;
+            border-radius: 42px;
+            background-color: transparent;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 3rem;
+            line-height: 139.4%;
+            padding: 15px 40px;
+        }
+
+        input {
+            height: 77px;
+            margin-bottom: 23px;
+        }
+
+        textarea {
+            height: 257px;
+            margin-bottom: 40px;
+        }
+
+        ::placeholder {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 3rem;
+            line-height: 139.4%;
+        }
+
+        button {
+            font-size: 30px;
+            padding: 11px 70px;
+            @include btn;
+            @include btn_animation;
+        }
+    }
+
+    &__right {
+        p {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 3rem;
+            line-height: 139.4%;
+            color: #F5F5F5;
+            margin: 0px;
+            max-width: 546px;
+            width: 100%;
+            float: right;
+        }
+    }
+
+    img {
+        position: absolute;
+        bottom: -260px;
+        right: 1px;
+        @include responsive-img();
+        max-width: 540.13px;
+        @include rolling;
+    }
+
+    @include maxWidth($tablet-width) {
+        &__title {
+            margin: 122px 0px 40px 15.152%;
+        }
+
+        &-main {
+            flex-direction: column;
+            margin: 0px 9.02% 0px 7.08%;
+        }
+
+        &__form {
+            order: 2;
+
+            input,
+            textarea {
+                width: 100%;
+                padding: 10px 25px;
+            }
+
+            input {
+                height: 61px;
+                margin-bottom: 22px;
+            }
+
+            textarea {
+                height: 234px;
+                margin-bottom: 33px;
+                border-radius: 14px;
+            }
+
+            ::placeholder {
+                font-size: 4rem;
+                padding: 0px !important;
+            }
+
+            button {
+                width: 192px;
+                height: 54px;
+                font-size: 15px;
+                line-height: 24px;
+                padding: 10px 20px;
+            }
+        }
+
+        &__right {
+            order: 1;
+
+            p {
+                font-size: 20px;
+                margin-bottom: 46px;
+                float: left;
+            }
+        }
+
+        img {
+            display: none;
+        }
+    }
+
+    @include maxWidth($mobile-with) {
+        margin-bottom: 93px;
+
+        &-main {
+            margin: 0px 9.02% 0px 20px;
+        }
+
+        &__form {
+
+            input,
+            textarea {
+                width: 100%;
+            }
+
+            input {
+                height: 41px;
+                margin-bottom: 12px;
+            }
+
+            textarea {
+                height: 134px;
+                margin-bottom: 23px;
+            }
+
+            ::placeholder {
+                padding: 7px 20px;
+                font-size: 4rem;
+            }
+
+            button {
+                width: 92px;
+                height: 34px;
+                font-size: 15px;
+                line-height: 24px;
+                padding: 4px 10px;
+            }
+        }
+
+        &__right {
+            p {
+                font-size: 15px;
+                margin-bottom: 46px;
+            }
+        }
+    }
+}

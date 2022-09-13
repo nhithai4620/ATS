@@ -1,0 +1,138 @@
+.footer {
+    height: 301px;
+    background: #222021;
+    box-shadow: 0px -6px 52px rgba(245, 245, 245, 0.17);
+    z-index: 100;
+    position: relative;
+
+    p {
+        @include normal-text;
+        margin: 0px;
+
+        a {
+            @include normal-text();
+        }
+    }
+
+    &__logo {
+        margin: 70px 70px auto 100px;
+        width: 197px;
+        cursor: pointer;
+
+        p {
+            margin-top: 58px;
+            font-size: 20px;
+        }
+    }
+
+    &__center {
+        margin: 94px 100px auto auto;
+
+        p {
+            font-size: 30px;
+        }
+    }
+
+    &__right {
+        margin: 94px 100px auto auto;
+
+        p {
+            font-size: 30px;
+        }
+    }
+
+    &__bottom {
+        display: none;
+    }
+
+    @include maxWidth($tablet-width) {
+        height: 100%;
+
+        p {
+            width: 70%;
+        }
+
+        &__logo {
+            display: block;
+            margin: 72px auto 43px;
+
+            p {
+                display: none;
+            }
+        }
+
+        &__center {
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+                text-align: center;
+                font-size: 25px;
+                line-height: 139.4%;
+                margin-bottom: 15px;
+            }
+        }
+
+        &__right {
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+                text-align: center;
+                font-size: 25px;
+                line-height: 139.4%;
+                margin-bottom: 15px;
+            }
+        }
+
+        &__bottom {
+            display: block;
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 38px;
+
+            p {
+                text-align: center;
+                font-family: 'Saira';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 139.4%;
+                color: #F5F5F5;
+            }
+        }
+    }
+
+    @include maxWidth($mobile-with) {
+        &__center {
+            p {
+                font-size: 15px;
+
+                img {
+                    width: 24px;
+                }
+            }
+        }
+
+        &__right {
+            p {
+                font-size: 15px;
+            }
+
+            img {
+                width: 24px;
+            }
+        }
+
+        &__bottom {
+            p {
+                font-size: 11px;
+            }
+        }
+    }
+}

@@ -1,0 +1,64 @@
+.hero {
+    &-header {
+        &__container {
+            background-color: #1E0C06;
+            padding-bottom: 47px;
+            border-radius: 0px 0px 79px 79px;
+
+            @include maxWidth($mobile-with) {
+                border-radius: 0px 0px 30px 30px;
+                padding-bottom: 22px;
+            }
+        }
+
+        &__logo {
+            margin: 47px 0px 0px 6.94%;
+
+            @include maxWidth($mobile-with) {
+                margin-top: 25px;
+            }
+        }
+
+        @include maxWidth($mobile-with) {
+            height: 103px;
+
+            button.menu-btn {
+                top: 0px;
+            }
+        }
+    }
+}
+
+.about-us {
+    margin: 105px 8.05% 0px 0px;
+
+    @include maxWidth($mobile-with) {
+        margin-top: 0px !important;
+    }
+}
+
+.our-work {
+    &__title {
+        margin: 207px auto 125px 16.875%;
+    }
+
+    @include maxWidth($mobile-with) {
+        &__title {
+            margin-top: 63px !important;
+            margin-bottom: 49px !important;
+            margin-left: 20px !important;
+        }
+    }
+}
+
+.questions {
+    &__title {
+        margin: 282px 0px 40px 32.152%;
+    }
+
+    @include maxWidth($mobile-with) {
+        &__title {
+            margin-top: 127px !important;
+        }
+    }
+}

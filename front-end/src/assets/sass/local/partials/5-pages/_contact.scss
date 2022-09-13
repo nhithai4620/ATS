@@ -1,0 +1,141 @@
+.hero {
+    &-header {
+        margin-bottom: 0px;
+
+        &__container {
+            background-color: #1E0C06;
+            padding-bottom: 47px;
+            border-radius: 0px 0px 79px 79px;
+
+            @include maxWidth($mobile-with) {
+                border-radius: 0px 0px 30px 30px;
+                padding-bottom: 22px;
+            }
+        }
+
+        &__logo {
+            margin: 47px 0px 0px 6.94%;
+
+            @include maxWidth($mobile-with) {
+                margin-top: 25px;
+            }
+        }
+
+        @include maxWidth($mobile-with) {
+            height: 103px;
+
+            button.menu-btn {
+                top: 0px;
+            }
+        }
+    }
+}
+
+.questions {
+    display: none;
+
+    @include maxWidth($mobile-with) {
+        display: block;
+    }
+
+    &__title {
+        margin-top: 42px !important;
+
+        h1 {
+            margin-top: 0px !important;
+        }
+    }
+}
+
+.contact {
+    margin: 180px 5.9% 300px 16.875%;
+
+    &__left {
+        margin-right: 100px;
+
+        h1 {
+            font-family: 'KyivType';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 9rem;
+            line-height: 115.4%;
+            text-transform: uppercase;
+            color: #F5F5F5;
+            margin: 0px;
+            margin-bottom: 118px;
+        }
+
+        p {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 3rem;
+            line-height: 139.4%;
+            color: #F5F5F5;
+            margin: 0px;
+            width: 100%;
+            margin-bottom: 33px;
+
+            a {
+                @include normal-text();
+            }
+        }
+    }
+
+    &__right {
+        iframe {
+            width: 100%;
+            overflow: hidden;
+            border-radius: 43px;
+            max-width: 493px;
+            height: 480px;
+        }
+    }
+
+    @include maxWidth($tablet-width) {
+        margin: 100px 150px;
+        display: block;
+
+        &__left {
+            margin-right: 0px;
+
+            h1 {
+                margin-bottom: 40px;
+            }
+
+            p {
+                margin-bottom: 30px;
+                font-size: 25px;
+            }
+        }
+    }
+
+    @include maxWidth($mobile-with) {
+        margin-top: 23px;
+        margin-left: 23px;
+        margin-right: 23px;
+        margin-bottom: 0px;
+
+        &__left {
+            margin-right: 0px;
+
+            h1 {
+                margin-bottom: 40px;
+            }
+
+            p {
+                margin-bottom: 30px;
+                font-size: 20px;
+            }
+        }
+
+        &__right {
+            iframe {
+                border-radius: 14px;
+                max-width: 347px;
+                height: 230px !important;
+                @include responsive-img()
+            }
+        }
+    }
+}

@@ -1,0 +1,66 @@
+.hero {
+    &-header {
+        margin-bottom: 0px;
+
+        &__container {
+            background-color: #1E0C06;
+            padding-bottom: 47px;
+            border-radius: 0px 0px 79px 79px;
+
+            @include maxWidth($mobile-with) {
+                border-radius: 0px 0px 30px 30px;
+                padding-bottom: 22px;
+            }
+        }
+
+        &__logo {
+            margin: 47px 0px 0px 6.94%;
+
+            @include maxWidth($mobile-with) {
+                margin-top: 25px;
+            }
+        }
+
+        @include maxWidth($mobile-with) {
+            height: 103px;
+
+            button.menu-btn {
+                top: 0px;
+            }
+        }
+    }
+}
+
+.our-work {
+    &__title {
+        margin: 100px auto 120px 16.875%;
+    }
+
+    @include maxWidth($mobile-with) {
+        &__title {
+            margin-top: 24px !important;
+            margin-bottom: 49px !important;
+            margin-left: 20px !important;
+        }
+    }
+}
+
+.wood-type {
+    &__title {
+        margin: 236px auto 125px 16.875%;
+    }
+
+    @include maxWidth($mobile-with) {
+        &__title {
+            margin-top: 48.77px !important;
+            margin-bottom: 80px !important;
+            margin-left: 20px !important;
+        }
+    }
+}
+
+.question {
+    &__title {
+        margin-top: 80px !important;
+    }
+}

@@ -1,0 +1,46 @@
+@import './font';
+
+@mixin minWidth($value) {
+    @media screen and (min-width: $value) {
+        @content;
+    }
+}
+
+@mixin maxWidth($value) {
+    @media screen and (max-width: $value) {
+        @content;
+    }
+}
+
+@mixin title {
+    font-family: 'KyivType';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 9rem;
+    line-height: 132.9%;
+    text-transform: uppercase;
+    color: $light-color;
+}
+
+@mixin normal-text {
+    font-family: 'Inter';
+    font-style: normal;
+    line-height: 139.4%;
+    font-weight: 500;
+    color: $light-color;
+}
+
+@mixin responsive-img {
+    width: 100%;
+    height: auto;
+}
+
+@mixin btn {
+    background: $button-color;
+    border-radius: 42px;
+    font-family: 'Inter';
+    color: $light-color;
+    font-weight: 700;
+    line-height: 36px;
+    border-color: transparent;
+}

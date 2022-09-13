@@ -11,7 +11,7 @@ export const HomeRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [HomeComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(HomeRoutes),

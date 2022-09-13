@@ -1,0 +1,7 @@
+@mixin zoom-in {
+    transition: transform .8s linear;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}

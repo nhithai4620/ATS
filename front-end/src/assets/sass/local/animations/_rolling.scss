@@ -1,0 +1,15 @@
+@mixin rolling {
+    &:hover {
+        animation: roll 5s infinite linear;
+    }
+
+    @keyframes roll {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}

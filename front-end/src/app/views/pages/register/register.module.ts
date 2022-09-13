@@ -12,7 +12,7 @@ const RegisterRoutes: Routes = [
 
 
 @NgModule({
-  declarations: [],
+  declarations: [RegisterComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(RegisterRoutes),

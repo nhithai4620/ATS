@@ -1,0 +1,112 @@
+.wood-type {
+    &__title {
+        margin: 400px auto 125px 16.875%;
+
+        h1 {
+            @include title();
+            margin: 0px !important;
+            max-width: 746px;
+        }
+    }
+
+    &__cards {
+        margin: 0 auto;
+        padding: 0px 8.33%;
+        display: flex;
+        justify-content: space-between;
+        overflow-x: auto;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        min-width: 147px;
+        margin-right: 10.21%;
+        max-width: 277px;
+
+        &-img {
+            max-width: 210px;
+
+            h4 {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 30px;
+                line-height: 36px;
+                color: $light-color;
+                margin: 38px 0px;
+                text-align: center;
+            }
+
+            img {
+                padding: 0px 6px;
+                max-width: 205px;
+                @include responsive-img();
+            }
+        }
+
+
+        &-check-list {
+            ul li {
+                list-style: none;
+                padding-bottom: 25px;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 3rem;
+                line-height: 36px;
+                color: #F5F5F5;
+
+                img {
+                    width: 25px;
+                }
+            }
+
+            color: $light-color;
+        }
+
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+
+    @include maxWidth($tablet-width) {
+        &__title {
+            margin-top: 203px;
+            margin-left: 20px;
+            margin-bottom: 90px;
+
+            h1 {
+                width: 80%;
+            }
+        }
+
+        &__card {
+            margin-right: 10.21%;
+
+            &:nth-child(2) {
+                align-self: flex-end;
+            }
+        }
+    }
+
+    /* width */
+    ::-webkit-scrollbar {
+        height: 3px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+}

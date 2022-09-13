@@ -1,0 +1,132 @@
+.adventages-work {
+    &-main {
+        margin: 0px 10.486%;
+
+        &__content {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+
+            @include maxWidth($tablet-width) {
+                flex-direction: column;
+            }
+        }
+    }
+
+    &__title {
+        margin: 270px 0px 125px 16.52%;
+
+        h1 {
+            width: 80%;
+            @include title;
+        }
+
+        @include maxWidth($mobile-with) {
+            margin-top: 93px;
+            margin-left: 20px;
+            margin-bottom: 46px;
+        }
+    }
+
+    &__left {
+        margin-right: 122px;
+
+        img {
+            max-width: 609px;
+            @include responsive-img();
+        }
+    }
+
+    &__right {
+        p {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 3rem;
+            line-height: 139.4%;
+            color: #F5F5F5;
+            margin-bottom: 46px;
+
+            &:first-child,
+            &:nth-child(2) {
+                max-width: 387px;
+            }
+
+            &:last-child {
+                max-width: 453px;
+                margin-bottom: 0px;
+            }
+        }
+    }
+
+    &__btn {
+        display: block;
+        margin: 120px auto 0px;
+        max-width: 472px;
+        width: 100%;
+        padding: 11px 70px;
+        font-size: 3rem;
+        @include btn;
+        @include btn_animation;
+    }
+
+    @include maxWidth($tablet-width) {
+
+        &__left {
+            order: 2;
+            margin-right: 0px;
+            margin: 0 auto;
+        }
+
+        &__right {
+            order: 1;
+            display: block;
+            margin: 0px auto;
+
+            p {
+                margin-bottom: 11px;
+
+                &:first-child,
+                &:nth-child(2) {
+                    max-width: 100%;
+                }
+
+                &:last-child {
+                    max-width: 100%;
+                    margin-bottom: 46.32px;
+                }
+            }
+
+        }
+
+        &__btn {
+            margin: 46px auto 0px;
+        }
+    }
+
+    @include maxWidth($mobile-with) {
+        &-main {
+            margin: 0px 17px;
+        }
+
+        &__right {
+            order: 1;
+
+            p {
+                font-size: 16px;
+                margin-bottom: 11px;
+
+                &:last-child {
+                    margin-bottom: 46.32px;
+                }
+            }
+        }
+
+        &__btn {
+            max-width: 219px;
+            padding: 10px 17px;
+            font-size: 15px;
+            line-height: 18px;
+        }
+    }
+}

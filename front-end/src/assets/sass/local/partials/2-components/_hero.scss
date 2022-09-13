@@ -1,0 +1,165 @@
+.hero {
+    position: relative;
+    height: 100%;
+
+    .hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -999;
+    }
+
+    &-main {
+        box-shadow: -5px -5px 50px #88888859;
+        margin: 85px 0px 85px 15.54%;
+        background: $banner-color;
+        border-radius: 43px 0px 0px 43px;
+        position: relative;
+
+        @include maxWidth($desktop-width) {
+            margin-top: 0px;
+            margin-bottom: 60px;
+        }
+
+        @include maxWidth($mobile-with) {
+            margin-top: 0px;
+            margin-bottom: 50px;
+            border-radius: 14px 0px 0px 14px;
+        }
+
+        &__left {
+            padding: 75px 0px 75px 9.125%;
+
+            h1 {
+                margin-bottom: 0px;
+                @include title();
+
+                @include maxWidth($tablet-width) {
+                    margin: 0px !important;
+                    margin-left: 0px !important;
+                    font-size: 30px;
+                }
+            }
+
+            h2 {
+                max-width: 333px;
+                margin: 22px 0px 0px;
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 3rem;
+                line-height: 39px;
+                color: $secondary-color;
+
+                @include maxWidth($tablet-width) {
+                    margin-top: 0px !important;
+                }
+
+                b {
+                    font-family: 'Inter';
+                    font-style: normal;
+                }
+            }
+
+            button {
+                margin: 45px 0px 25px;
+                padding: 11px 70px;
+                font-size: 3rem;
+                @include btn_animation();
+                @include btn();
+            }
+
+            @include maxWidth($tablet-width) {
+                padding: 39px 0px 39px 9.125%;
+
+                h2 {
+                    margin: 12px 0px 0px;
+                }
+
+                button {
+                    margin: 25px 0px 25px;
+                    padding: 5px 17px !important;
+                    width: 86px;
+                    border-radius: 42px;
+                    line-height: 18px;
+                }
+            }
+        }
+
+        &__right {
+            position: relative;
+
+            .image-item {
+                position: absolute;
+
+                img {
+                    width: 205px;
+
+                    @include maxWidth($tablet-width) {
+                        width: 120px;
+                    }
+                }
+
+            }
+
+            .item1 {
+                right: 120px;
+                top: 43px;
+            }
+
+            .item2 {
+                top: 316px;
+                right: 365px;
+            }
+
+            .item3 {
+                right: 120px;
+                top: 452px;
+            }
+
+            @include maxWidth($tablet-width) {
+                .item1 {
+                    right: 30px;
+                    top: 100px;
+                }
+
+                .item2 {
+                    top: -106px;
+                    right: 15px;
+                }
+
+                .item3 {
+                    right: 160px;
+                    top: 22px;
+                }
+            }
+        }
+
+        &__line {
+            position: absolute;
+            max-width: 451px;
+            width: 100%;
+            height: 0px;
+            left: 380px;
+            top: 300px;
+            border: 1px solid $light-color;
+            transform: rotate(90deg);
+
+            @include maxWidth($tablet-width) {
+                position: relative;
+                top: -50px;
+                left: 20px;
+                transform: rotate(0deg);
+                max-width: 250px;
+            }
+        }
+
+    }
+}
+
+.transparent-header {
+    @include maxWidth($mobile-with) {
+        padding-bottom: 20px;
+        background-color: rgba(26, 26, 26, 0.967);
+    }
+}

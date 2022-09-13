@@ -1,0 +1,11 @@
+@mixin shake_animation {
+    &:hover {
+        animation: shake 1s linear 2 alternate;
+    }
+
+    @keyframes shake {
+        to {
+            rotate: (15deg);
+        }
+    }
+}

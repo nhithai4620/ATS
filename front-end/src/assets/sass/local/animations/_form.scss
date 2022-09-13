@@ -1,0 +1,22 @@
+@mixin form_animation {
+
+    transition: 0.5s;
+
+    input,
+    textarea {
+        &:hover {
+            border: 4px solid #6C200B;
+            background-color: rgba(213, 220, 238, 0.9);
+        }
+
+        &:active {
+            border: 4px solid #6C200B;
+            background-color: rgba(213, 220, 238, 0.9);
+        }
+
+        &:not(:placeholder-shown) {
+            border: 4px solid #6C200B;
+            background-color: rgba(213, 220, 238, 0.9);
+        }
+    }
+}

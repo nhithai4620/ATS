@@ -1,0 +1,16 @@
+@mixin btn_animation {
+
+    transition: 0.5s;
+
+    &:hover {
+        background-color: #D5DCEE;
+        color: #8E3921;
+    }
+
+    &:active {
+        background-color: #D5DCEE;
+        ;
+        color: #8E3921;
+        transform: translateY(4px);
+    }
+}
