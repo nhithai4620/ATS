@@ -1,15 +1,24 @@
 const {User} = require("../models/user")
 const jwt = require('jsonwebtoken');
+const bcrypt = require("bcryptjs");
 
-const JWT_SECRET = 'sdjkfh8923yhjdksbfma@#*(&@*!^#&@bhjb2qiuhesdbhjdsfg839ujkdhfjk'
+let refreshTokens = [];
 
 const authController = {
     register: async(req, res) =>{
-        var personInfo = req.body;
+        
         try{
+            var personInfo = req.body;
+            const salt = await bcrypt.genSalt(10);
+            const hashed = await bcrypt.hash(req.body.password, salt);
+
+            const newUser = await new User({
+                email: personInfo.email,
+                password: hashed,
+            })
+
             User.findOne({email:personInfo.email},async (err,data)=>{
                 if(!data){
-                    const newUser = new User(personInfo);
                     const saveUser = await newUser.save();
                     res.status(200).json(saveUser);
                 }else{
@@ -26,19 +35,21 @@ const authController = {
     login: async(req, res) =>{
         try {
             const { username, password } = req.body
+    
+            User.findOne({email:username},async (err,data)=>{
+                const validPassword = await bcrypt.compare(
+                    password,
+                    data.password
+                );
 
-            User.findOne({email:username},(err,data)=>{
                 if(data){
-                    if(data.password ==  password){
-                        const token = jwt.sign(
-                            {
-                                id: data._id,
-                                username: data.username
-                            },
-                            JWT_SECRET
-                        );
 
-                        res.status(200).json({message: 'success', data: token});
+                    if(validPassword){
+                        const accessToken = authController.generateAccessToken(data);
+                        const refreshToken = authController.generateRefreshToken(data);
+                        refreshTokens.push(refreshToken);
+
+                        res.status(200).json({message: 'success', accessToken: accessToken, refreshToken: refreshToken });
 
                     }else{
                         res.status(403).json({ status: 'error', error: 'UnauthorizedException', message: 'Unauthorized' });
@@ -51,6 +62,28 @@ const authController = {
             console.log(err);
             res.status(500).json(err);
         }
+    },
+
+    generateAccessToken: (user) => {
+        return jwt.sign(
+          {
+            id: user._id,
+            username: user.username
+          },
+          process.env.JWT_SECRET,
+          { expiresIn: "30s" }
+        );
+    },
+
+    generateRefreshToken: (user) => {
+        return jwt.sign(
+          {
+            id: user._id,
+            username: user.username
+          },
+          process.env.JWT_REFRESH_KEY,
+          { expiresIn: "365d" }
+        );
     },
 
     profile: async(req, res) =>{
@@ -71,16 +104,6 @@ const authController = {
             res.status(500).json(err);
         }
     },
-
-    getAllUsers: async(req, res) =>{
-        try {
-            const users = await User.find();
-            res.status(200).json(users);
-        } catch (error) {
-            res.status(500).json(error);
-            console.log(error)
-        }
-    }
 };
 
 module.exports = authController;
