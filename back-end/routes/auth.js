@@ -9,6 +9,4 @@ router.post("/login",authController.login);
 
 router.get("/profile",authController.profile);
 
-router.get("/", authController.getAllUsers);
-
 module.exports = router;
