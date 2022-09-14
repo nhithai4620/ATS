@@ -11,6 +11,10 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
     HttpClientModule,
     NgbModule,
     LazyLoadImageModule
-  ]
+  ],
+  exports: [
+    LazyLoadImageModule,
+  ],
+
 })
 export class SharedModule { }
