@@ -15,9 +15,7 @@ export class AuthService {
   _isLoggedIn$ = new BehaviorSubject<boolean>(false);
   isLoggedIn$ = this._isLoggedIn$.asObservable();
 
-  constructor(
-    private http: HttpClient, 
-    private router: Router) {
+  constructor(private http: HttpClient, private router: Router) {
     this._isLoggedIn$.next(!!this.getAccessToken);
   }
 
@@ -60,4 +58,22 @@ export class AuthService {
     this.router.navigate(['/login']);
   }
 
+  register(user: any) {
+    const data = JSON.stringify(user);
+    return this.http
+      .post<any>(`${environment.apiUrl}/auth/register`, data, {
+        headers: this.Headers,
+      })
+      .subscribe({
+        next: (data) => {
+          console.log(data);
+          setTimeout(() => {
+            this.router.navigate(['/login']);
+          }, 1000);
+        },
+        error: (error) => {
+          console.error('There was an error!', error);
+        },
+      });
+  }
 }

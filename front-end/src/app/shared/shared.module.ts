@@ -6,15 +6,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    NgbModule,
-    LazyLoadImageModule
-  ],
-  exports: [
-    LazyLoadImageModule,
-  ],
-
+  imports: [CommonModule, HttpClientModule, NgbModule, LazyLoadImageModule],
+  exports: [LazyLoadImageModule],
 })
-export class SharedModule { }
+export class SharedModule {}

@@ -22,8 +22,8 @@
                   class="form-control"
                   formControlName="username"
                   placeholder="Enter username or email"
-                  [ngClass]="{
-                    'is-invalid': submitted && f['username'].errors
+                  [class]="{
+                    'is-invalid': f['username'].errors && submitted
                   }"
                 />
                 <div
@@ -51,8 +51,8 @@
                     class="form-control"
                     placeholder="Password"
                     formControlName="password"
-                    [ngClass]="{
-                      'is-invalid': submitted && f['password'].errors
+                    [class]="{
+                      'is-invalid': f['password'].errors && submitted
                     }"
                   />
                   <div
