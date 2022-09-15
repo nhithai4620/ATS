@@ -14,6 +14,10 @@ const authController = {
       const newUser = await new User({
         email: personInfo.email,
         password: hashed,
+        phone: personInfo?.phone,
+        fullName: personInfo?.fullName,
+        dob: personInfo?.dob,
+        gender: personInfo?.gender
       });
 
       User.findOne({ email: personInfo.email }, async (err, data) => {
@@ -37,9 +41,8 @@ const authController = {
       const { username, password } = req.body;
 
       User.findOne({ email: username }, async (err, data) => {
-        const validPassword = await bcrypt.compare(password, data.password);
-
         if (data) {
+          const validPassword = await bcrypt.compare(password, data.password);
           if (validPassword) {
             const accessToken = authController.generateAccessToken(data);
             const refreshToken = authController.generateRefreshToken(data);
@@ -66,7 +69,7 @@ const authController = {
             .status(403)
             .json({
               status: "error",
-              message: "This Email Is not regestered!",
+              message: "This email is not regestered! please register",
             });
         }
       });

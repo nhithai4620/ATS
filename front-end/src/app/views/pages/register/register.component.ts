@@ -52,8 +52,9 @@ export class RegisterComponent implements OnInit {
     if (this.signupForm.invalid) {
       return;
     } else {
-      console.log(this.signupForm.value);
+      delete this.signupForm.value.conpassword;
       this.submitted = false;
+      this.authService.register(this.signupForm.value);
     }
   }
 }
