@@ -5,9 +5,19 @@ export const navbarData = [
     label: 'Dashboard',
   },
   {
-    routeLink: 'products',
-    icon: 'fal fa-box-open',
-    label: 'Products',
+    routeLink: 'profile',
+    icon: 'fal fa-user',
+    label: 'Profile',
+  },
+  {
+    routeLink: 'my-tasks',
+    icon: 'fal fa-list',
+    label: 'My tasks',
+  },
+  {
+    routeLink: 'contact',
+    icon: 'fal fa-address-card',
+    label: 'Contact',
   },
   {
     routeLink: 'statistics',
@@ -15,19 +25,24 @@ export const navbarData = [
     label: 'Statistics',
   },
   {
-    routeLink: 'coupens',
-    icon: 'fal fa-tags',
-    label: 'Coupens',
+    routeLink: 'applications',
+    icon: 'fal fa-envelope-open-text',
+    label: 'Applications',
   },
   {
-    routeLink: 'pages',
-    icon: 'fal fa-file',
-    label: 'Pages',
+    routeLink: 'candidates',
+    icon: 'fal fa-users',
+    label: 'Candidates',
   },
   {
-    routeLink: 'media',
-    icon: 'fal fa-camera',
-    label: 'Media',
+    routeLink: 'interviews',
+    icon: 'fal fa-calendar',
+    label: 'Interviews',
+  },
+  {
+    routeLink: 'job-requisitions',
+    icon: 'fal fa-suitcase',
+    label: 'Job Requisitions',
   },
   {
     routeLink: 'settings',
