@@ -27,6 +27,13 @@ const routes: Routes = [
         (m) => m.RegisterModule
       ),
   },
+  {
+    path: 'profile',
+    loadChildren: () =>
+      import('./views/pages/profile/profile.module').then(
+        (m) => m.ProfileModule
+      ),
+  },
 ];
 
 @NgModule({

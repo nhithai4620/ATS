@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { SidenavComponent } from './sidenav.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [SidenavComponent],
@@ -16,6 +17,7 @@ import { SidenavComponent } from './sidenav.component';
     MatIconModule,
     MatListModule,
     MatButtonModule,
+    RouterModule
   ],
   exports: [SidenavComponent],
 })

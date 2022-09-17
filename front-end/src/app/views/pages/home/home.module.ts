@@ -5,7 +5,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 // import { OverlayModule } from '@angular/cdk/overlay'
 // import { CdkMenuModule } from '@angular/cdk/menu'
-import { SidenavModule } from '../../base/sidenav/sidenav.module';
 
 export const HomeRoutes: Routes = [
   {
@@ -19,7 +18,6 @@ export const HomeRoutes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(HomeRoutes),
-    SidenavModule
   ],
   bootstrap: [HomeComponent]
 })
