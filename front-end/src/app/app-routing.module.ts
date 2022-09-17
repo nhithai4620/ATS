@@ -6,13 +6,13 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-    import('./views/pages/home/home.module').then((m) => m.HomeModule),
+      import('./views/pages/home/home.module').then((m) => m.HomeModule),
     canActivate: [AuthGuard],
   },
   {
     path: 'home',
     loadChildren: () =>
-    import('./views/pages/home/home.module').then((m) => m.HomeModule),
+      import('./views/pages/home/home.module').then((m) => m.HomeModule),
     canActivate: [AuthGuard],
   },
   {
@@ -23,12 +23,14 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () =>
-      import('./views/pages/register/register.module').then((m) => m.RegisterModule),
+      import('./views/pages/register/register.module').then(
+        (m) => m.RegisterModule
+      ),
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

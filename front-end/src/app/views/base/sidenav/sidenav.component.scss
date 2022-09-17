@@ -1,6 +1,6 @@
 @import 'config/color';
 .sidenav {
-    background: #263238;
+    background: $primary;
     transition: all .5s ease;
     position: fixed;
     z-index: 1;
