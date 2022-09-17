@@ -17,8 +17,6 @@ import ValidationMatching from 'app/shared/utils/vadidation-matching';
 export class RegisterComponent implements OnInit {
   submitted = false;
 
-  genders = ['male', 'female'];
-
   signupForm: FormGroup = new FormGroup({});
 
   constructor(private fb: FormBuilder, private authService: AuthService) {}
@@ -30,9 +28,9 @@ export class RegisterComponent implements OnInit {
         password: ['', [Validators.required, Validators.minLength(6)]],
         conpassword: ['', [Validators.required, Validators.minLength(6)]],
         phone: ['', [Validators.pattern('[- +()0-9]+')]],
-        fullName: [''],
+        firstName: [''],
+        lastName: [''],
         dob: [''],
-        gender: [''],
       },
       {
         validators: [

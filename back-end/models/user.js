@@ -15,7 +15,15 @@ const userSchema = new Schema( {
 		type: Number,
 		required: false
 	},
-	fullName:{
+	firstName:{
+		type: String,
+		required: false,
+	},
+	lastName:{
+		type: String,
+		required: false,
+	},
+	jobTittle:{
 		type: String,
 		required: false,
 	},
@@ -23,10 +31,6 @@ const userSchema = new Schema( {
 		type: String,
 		required: false
 	},
-	gender:{
-		type: String,
-		required: false
-	}
 });
 
 let User = mongoose.model('User', userSchema);

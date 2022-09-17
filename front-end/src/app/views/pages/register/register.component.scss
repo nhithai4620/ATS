@@ -1,20 +1,20 @@
 @import 'config/color';
 
-.is-invalid{
-	border-bottom: 1.5px solid crimson
+.is-invalid {
+    border-bottom: 1.5px solid crimson
 }
 
-.invalid-feedback{
-    >div{
+.invalid-feedback {
+    >div {
         font-weight: 500;
     }
 }
 
-.star-invalid{
+.star-invalid {
     color: crimson !important;
 }
 
-label{
+label {
     font-size: 16px;
     font-weight: 600;
     color: rgba(59, 58, 58);

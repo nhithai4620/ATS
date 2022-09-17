@@ -1,31 +1,21 @@
+@import "local/mixins";
+
 body {
-    background-color: $background-color !important;
     overflow-x: hidden;
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 100%;
 }
 
 @include maxWidth($tablet-width) {
     html {
-        font-size: 43.75%;
+        font-size: 80%;
     }
 }
 
 @include maxWidth($mobile-with) {
     html {
-        font-size: 25%;
+        font-size: 50%;
     }
-}
-
-.wapper {
-    max-width: $desktop-width;
-    box-shadow: -5px -10px 50px #888888;
-    margin: 0 auto;
-    background-image: url('/assets/images/background.jpg');
-    background-size: 100% 100%;
-    z-index: 100;
-    height: 100%;
-    width: 100%;
 }

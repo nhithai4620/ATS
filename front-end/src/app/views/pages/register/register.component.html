@@ -169,14 +169,29 @@
                 </div>
               </div>
 
-              <div class="form-group mb-3">
-                <label class="label" for="fname">Full name</label>
-                <input
-                  type="text"
-                  id="fname"
-                  class="form-control"
-                  formControlName="fullName"
-                />
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group mb-3">
+                    <label class="label" for="firstName">First Name</label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      class="form-control"
+                      formControlName="firstName"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-3">
+                    <label class="label" for="lastName">Last Name</label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      class="form-control"
+                      formControlName="lastName"
+                    />
+                  </div>
+                </div>
               </div>
 
               <div class="form-group mb-3">
@@ -200,15 +215,6 @@
                     less than 100
                   </div>
                 </div>
-              </div>
-
-              <div class="form-group mb-3">
-                <label class="label" for="gender">Gender</label>
-                <select name="gender" id="gender" formControlName="gender">
-                  <option *ngFor="let gender of genders">
-                    {{ gender | uppercase }}
-                  </option>
-                </select>
               </div>
 
               <div>

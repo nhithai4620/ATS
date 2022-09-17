@@ -15,7 +15,8 @@ const authController = {
         email: personInfo.email,
         password: hashed,
         phone: personInfo?.phone,
-        fullName: personInfo?.fullName,
+        firstName: personInfo?.firstName,
+        lastName: personInfo?.lastName,
         dob: personInfo?.dob,
         gender: personInfo?.gender
       });
