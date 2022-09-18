@@ -87,7 +87,7 @@ const authController = {
         username: user.username,
       },
       process.env.JWT_SECRET,
-      { expiresIn: "30s" }
+      { expiresIn: "1h" }
     );
   },
 
