@@ -21,26 +21,94 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group mb-3">
-                          <label class="label" for="firstName"
-                            >First Name</label
+                          <label
+                            class="label"
+                            for="firstName"
+                            [class]="{
+                              'star-invalid':
+                                f['firstName'].errors && f['firstName'].touched
+                            }"
                           >
+                            First Name
+                            <span
+                              [class]="{
+                                'star-invalid':
+                                  f['firstName'].errors ||
+                                  (f['firstName'].touched &&
+                                    f['firstName'].errors)
+                              }"
+                            >
+                              *
+                            </span>
+                          </label>
                           <input
                             type="text"
                             id="firstName"
                             class="form-control"
                             formControlName="firstName"
+                            [class]="{
+                              'is-invalid':
+                                f['firstName'].errors &&
+                                (f['firstName'].touched || submitted)
+                            }"
                           />
+                          <div
+                            *ngIf="
+                              f['firstName'].errors &&
+                              (f['firstName'].touched || submitted)
+                            "
+                            class="invalid-feedback"
+                          >
+                            <div *ngIf="f['firstName'].errors['required']">
+                              First name is required
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group mb-3">
-                          <label class="label" for="lastName">Last Name</label>
+                          <label
+                            class="label"
+                            for="lastName"
+                            [class]="{
+                              'star-invalid':
+                                f['lastName'].errors && f['lastName'].touched
+                            }"
+                          >
+                            Last Name
+                            <span
+                              [class]="{
+                                'star-invalid':
+                                  f['lastName'].errors ||
+                                  (f['lastName'].touched &&
+                                    f['lastName'].errors)
+                              }"
+                            >
+                              *
+                            </span>
+                          </label>
                           <input
                             type="text"
                             id="lastName"
                             class="form-control"
                             formControlName="lastName"
+                            [class]="{
+                              'is-invalid':
+                                f['lastName'].errors &&
+                                (f['lastName'].touched || submitted)
+                            }"
                           />
+                          <div
+                            *ngIf="
+                              f['lastName'].errors &&
+                              (f['lastName'].touched || submitted)
+                            "
+                            class="invalid-feedback"
+                          >
+                            <div *ngIf="f['lastName'].errors['required']">
+                              Last name is required
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
