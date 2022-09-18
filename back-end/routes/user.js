@@ -1,8 +1,9 @@
 var express = require('express');
 const userController = require('../controllers/userController');
 var router = express.Router();
-var User = require('../models/user');
 
-router.get("/profile",userController.profile);
+const {verifyToken} = require("../controllers/verifyToken");
+
+router.get("/profile",verifyToken,userController.profile);
 
 module.exports = router;
