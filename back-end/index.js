@@ -8,6 +8,8 @@ const cookieParser = require("cookie-parser");
 
 const authRouter = require("./routes/auth");
 
+const userRouter = require("./routes/user");
+
 var bodyParser = require("body-parser");
 
 app.use(bodyParser.json());
@@ -26,6 +28,8 @@ app.get("/api",(req,res)=>{
 })
 
 app.use("/api/v1/auth", authRouter);
+
+app.use("/api/v1/users/me", userRouter)
 
 app.listen(3000, () =>{
     console.log("Server is running");
