@@ -3,7 +3,8 @@ const {User} = require("../models/User");
 const userController = {
   profile: async (req, res) => {
     try {
-      User.find((err, data) => {
+      const userId = req.user.id;
+      User.findOne({_id: userId},(err, data) => {
         if (data){
             res.status(200).json(data);
         } else{
