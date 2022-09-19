@@ -6,10 +6,9 @@ import { BehaviorSubject, Observable, Subject, throwError } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class UserService {
   constructor(private http: HttpClient) {}
-  
+
   _profile$ = new BehaviorSubject<any>({});
   profile$ = this._profile$.asObservable();
-
 
   getProfile() {
     return this.http

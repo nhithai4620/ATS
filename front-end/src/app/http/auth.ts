@@ -15,7 +15,6 @@ const TOKEN_HEADER_KEY = 'Authorization';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-
   constructor(private injector: Injector, private authService: AuthService) {}
 
   intercept(
@@ -71,7 +70,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
   private addTokenHeader(request: HttpRequest<any>, token: string) {
     return request.clone({
-      headers: request.headers.set(TOKEN_HEADER_KEY,'Bearer ' + token),
+      headers: request.headers.set(TOKEN_HEADER_KEY, 'Bearer ' + token),
     });
   }
 }
