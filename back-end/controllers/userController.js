@@ -3,7 +3,7 @@ const {User} = require("../models/User");
 const userController = {
   profile: async (req, res) => {
     try {
-      User.findOne({ email: req.body.email }, (err, data) => {
+      User.find((err, data) => {
         if (data){
             res.status(200).json(data);
         } else{

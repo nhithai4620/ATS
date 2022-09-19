@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SidenavModule } from './views/base/sidenav/sidenav.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +16,8 @@ import { SidenavModule } from './views/base/sidenav/sidenav.module';
     AppRoutingModule,
     HttpClientModule,
     NgbModule,
-    SidenavModule
+    SidenavModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent],

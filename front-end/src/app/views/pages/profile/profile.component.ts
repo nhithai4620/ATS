@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import CalculateDate from 'app/shared/utils/caculate-date';
 import ValidationMatching from 'app/shared/utils/vadidation-matching';
+import { UserService } from '../../../shared/services/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -18,7 +19,10 @@ export class ProfileComponent implements OnInit {
 
   profileForm: FormGroup = new FormGroup({});
 
-  constructor(private fb: FormBuilder) {}
+  constructor(
+    private fb: FormBuilder,
+    private us: UserService
+    ) {}
 
   ngOnInit(): void {
     this.profileForm = this.fb.group(
@@ -39,6 +43,13 @@ export class ProfileComponent implements OnInit {
         ],
       }
     );
+    
+    this.us.getProfile();
+    this.us.profile$.subscribe(
+      (data)=>{
+        console.log(data)
+      }
+    )
   }
 
   get f(): { [key: string]: AbstractControl } {
