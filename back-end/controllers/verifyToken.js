@@ -12,7 +12,13 @@ const verifyToken = (req, res, next) => {
       }
     });
   } else {
-    res.status(401).json({error:"UnauthorizedException", statusCode: 401, message: "Unauthorized"});
+    res
+      .status(401)
+      .json({
+        error: "UnauthorizedException",
+        statusCode: 401,
+        message: "Unauthorized",
+      });
   }
 };
 

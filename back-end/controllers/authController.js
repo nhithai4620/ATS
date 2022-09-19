@@ -18,7 +18,7 @@ const authController = {
         firstName: personInfo?.firstName,
         lastName: personInfo?.lastName,
         dob: personInfo?.dob,
-        gender: personInfo?.gender
+        gender: personInfo?.gender,
       });
 
       User.findOne({ email: personInfo.email }, async (err, data) => {
@@ -49,29 +49,23 @@ const authController = {
             const refreshToken = authController.generateRefreshToken(data);
             refreshTokens.push(refreshToken);
 
-            res
-              .status(200)
-              .json({
-                message: "success",
-                accessToken: accessToken,
-                refreshToken: refreshToken,
-              });
+            res.status(200).json({
+              message: "success",
+              accessToken: accessToken,
+              refreshToken: refreshToken,
+            });
           } else {
-            res
-              .status(403)
-              .json({
-                status: "error",
-                error: "UnauthorizedException",
-                message: "Unauthorized",
-              });
+            res.status(403).json({
+              status: "error",
+              error: "UnauthorizedException",
+              message: "Unauthorized",
+            });
           }
         } else {
-          res
-            .status(403)
-            .json({
-              status: "error",
-              message: "This email is not regestered! please register",
-            });
+          res.status(403).json({
+            status: "error",
+            message: "This email is not regestered! please register",
+          });
         }
       });
     } catch (error) {
