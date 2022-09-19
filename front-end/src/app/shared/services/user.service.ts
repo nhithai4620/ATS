@@ -7,7 +7,7 @@ import { BehaviorSubject, Observable, Subject, throwError } from 'rxjs';
 export class UserService {
   constructor(private http: HttpClient) {}
   
-  _profile$ = new BehaviorSubject<any[]>([]);
+  _profile$ = new BehaviorSubject<any>({});
   profile$ = this._profile$.asObservable();
 
 
@@ -17,8 +17,7 @@ export class UserService {
       .pipe()
       .subscribe({
         next: (res: any) => {
-          // this._profile$.next(res);
-          console.log(res)
+          this._profile$.next(res);
         },
         error: (error) => {
           console.error('There was an error!', error);

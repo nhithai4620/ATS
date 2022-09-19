@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {
   AbstractControl,
+  EmailValidator,
   FormBuilder,
   FormGroup,
   Validators,
@@ -48,6 +49,14 @@ export class ProfileComponent implements OnInit {
     this.us.profile$.subscribe(
       (data)=>{
         console.log(data)
+        this.profileForm.patchValue({
+          firstName : data!.firstName,
+          lastName : data!.lastName,
+          email : data.email,
+          jobTittle : data!.jobTittle,
+          phone: data.phone,
+          dob : data.dob
+        })
       }
     )
   }
