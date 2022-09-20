@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const verifyToken = (req, res, next) => {
   const TokenHeader = req.headers["authorization"].split(" ");
   const bearerHeader = TokenHeader[1];
-  console.log(TokenHeader);
+
   if (bearerHeader) {
     jwt.verify(bearerHeader, process.env.JWT_SECRET, (err, data) => {
       if (err) {
