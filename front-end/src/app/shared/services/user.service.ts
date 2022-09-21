@@ -23,4 +23,18 @@ export class UserService {
         },
       });
   }
+
+  updateProfile(user: any){
+    return this.http.put<any>(`${environment.apiUrl}/users/me/profile`,user)
+      .pipe()
+      .subscribe({
+        next: res => {
+          this.getProfile()
+          console.log(res);
+        },
+        error: error => {
+            console.error('There was an error!', error);
+        }
+      })
+  }
 }

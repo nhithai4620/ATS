@@ -18,10 +18,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup = new FormGroup({});
 
-  constructor(
-    private fb: FormBuilder,
-    private authService: AuthService
-  ) {}
+  constructor(private fb: FormBuilder, private authService: AuthService) {}
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -41,7 +38,7 @@ export class LoginComponent implements OnInit {
     this.submitted = true;
     if (this.loginForm.invalid) {
       return;
-    }else{
+    } else {
       this.authService.login(
         this.loginForm.value.username,
         this.loginForm.value.password

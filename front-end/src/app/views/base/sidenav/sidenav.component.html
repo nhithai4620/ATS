@@ -13,9 +13,10 @@
   </div>
   <ul class="sidenav-nav">
     <li class="sidenav-nav-item" *ngFor="let data of navData">
-      <a class="sidenav-nav-link" 
-      routerLinkActive="active"
-      [routerLink]="[data.routeLink]"
+      <a
+        class="sidenav-nav-link"
+        routerLinkActive="active"
+        [routerLink]="[data.routeLink]"
       >
         <i class="sidenav-link-icon" [class]="data.icon"></i>
         <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">

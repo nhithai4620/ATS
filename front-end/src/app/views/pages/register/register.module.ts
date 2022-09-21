@@ -11,7 +11,6 @@ const RegisterRoutes: Routes = [
   },
 ];
 
-
 @NgModule({
   declarations: [RegisterComponent],
   imports: [
@@ -19,6 +18,6 @@ const RegisterRoutes: Routes = [
     RouterModule.forChild(RegisterRoutes),
     FormsModule,
     ReactiveFormsModule,
-  ]
+  ],
 })
-export class RegisterModule { }
+export class RegisterModule {}

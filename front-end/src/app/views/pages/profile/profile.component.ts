@@ -29,8 +29,8 @@ export class ProfileComponent implements OnInit {
     this.profileForm = this.fb.group(
       {
         email: ['', [Validators.required, Validators.email]],
-        password: ['', [Validators.required, Validators.minLength(6)]],
-        conpassword: ['', [Validators.required, Validators.minLength(6)]],
+        password: ['', [Validators.minLength(6)]],
+        conpassword: ['', [Validators.minLength(6)]],
         phone: ['', [Validators.pattern('[- +()0-9]+')]],
         firstName: ['',[Validators.required]],
         lastName: ['',[Validators.required]],
@@ -72,7 +72,7 @@ export class ProfileComponent implements OnInit {
     } else {
       delete this.profileForm.value.conpassword;
       this.submitted = false;
-      console.log(this.profileForm.value);
+      this.us.updateProfile(this.profileForm.value);
     }
   }
 }
