@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SidenavModule } from './views/base/sidenav/sidenav.module';
 import { SharedModule } from './shared/shared.module';
 import { CandidatesComponent } from './views/pages/candidates/candidates.component';
+import { JobRequisitionsComponent } from './views/pages/job-requisitions/job-requisitions.component';
 
 @NgModule({
   declarations: [AppComponent],

@@ -1,0 +1,13 @@
+@import 'config/color';
+
+.job-requisitions {
+    &-add {
+        button {
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 20px 15px;
+            width: 200px;
+            background-color: $primary;
+        }
+    }
+}
