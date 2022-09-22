@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SidenavModule } from './views/base/sidenav/sidenav.module';
 import { SharedModule } from './shared/shared.module';
+import { CandidatesComponent } from './views/pages/candidates/candidates.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +18,7 @@ import { SharedModule } from './shared/shared.module';
     HttpClientModule,
     NgbModule,
     SidenavModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -3,9 +3,6 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home.component';
 import { RouterModule, Routes } from '@angular/router';
 
-// import { OverlayModule } from '@angular/cdk/overlay'
-// import { CdkMenuModule } from '@angular/cdk/menu'
-
 export const HomeRoutes: Routes = [
   {
     path: '',
@@ -15,11 +12,7 @@ export const HomeRoutes: Routes = [
 
 @NgModule({
   declarations: [HomeComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(HomeRoutes),
-  ],
-  bootstrap: [HomeComponent]
+  imports: [CommonModule, RouterModule.forChild(HomeRoutes)],
+  bootstrap: [HomeComponent],
 })
-
-export class HomeModule { }
+export class HomeModule {}

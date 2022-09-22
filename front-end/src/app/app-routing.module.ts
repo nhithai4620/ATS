@@ -34,6 +34,13 @@ const routes: Routes = [
         (m) => m.ProfileModule
       ),
   },
+  {
+    path: 'candidates',
+    loadChildren: () =>
+      import('./views/pages/candidates/candidates.module').then(
+        (m) => m.CandidatesModule
+      ),
+  },
 ];
 
 @NgModule({
