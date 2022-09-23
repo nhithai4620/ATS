@@ -4,6 +4,8 @@ import { CandidatesComponent } from './candidates.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddCandidateComponent } from './add-candidate/add-candidate.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 
 export const CandidatesRoutes: Routes = [
   {
@@ -18,6 +20,9 @@ export const CandidatesRoutes: Routes = [
     CommonModule,
     RouterModule.forChild(CandidatesRoutes),
     MatDialogModule,
+    FormsModule,
+    MatButtonModule,
+    ReactiveFormsModule,
   ],
   exports: [CandidatesComponent],
 })

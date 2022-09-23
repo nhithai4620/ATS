@@ -1,1 +1,70 @@
-<p>add-requisition works!</p>
+<h2 mat-dialog-title>{{ actionBtn }} Job requisition</h2>
+<div mat-dialog-content>
+  <form [formGroup]="AddJobRequisitionForm" (ngSubmit)="onSubmit()">
+    <mat-card>
+      <mat-card-content>
+        <div class="row" formGroupName="jobDetails">
+          <div class="col-md-12">
+            <h5>Job details</h5>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group mb-3">
+                  <label class="label" for="jobTittle"> Job Title </label>
+                  <input
+                    type="text"
+                    id="jobTittle"
+                    class="form-control"
+                    formControlName="jobTittle"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group mb-3">
+                  <label class="label" for="jobType">Job Type</label>
+                  <input
+                    type="text"
+                    id="jobType"
+                    class="form-control"
+                    formControlName="jobType"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group mb-3">
+                  <label class="label" for="jobCategories">
+                    Job Categories
+                  </label>
+                  <input
+                    type="text"
+                    id="jobCategories"
+                    class="form-control"
+                    formControlName="jobCategories"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group mb-3">
+                  <label class="label" for="jobQuantity">Job Quantity</label>
+                  <input
+                    type="text"
+                    id="jobQuantity"
+                    class="form-control"
+                    formControlName="jobQuantity"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+  <button mat-raised-button color="primary">
+    {{ actionBtn }}
+  </button>
+</div>

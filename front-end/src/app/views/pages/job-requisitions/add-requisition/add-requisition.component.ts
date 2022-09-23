@@ -39,4 +39,6 @@ export class AddRequisitionComponent implements OnInit {
   get f(): { [key: string]: AbstractControl } {
     return this.AddJobRequisitionForm.controls;
   }
+
+  onSubmit() {}
 }
