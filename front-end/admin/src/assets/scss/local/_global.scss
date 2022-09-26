@@ -1,11 +1,21 @@
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@import "local/mixins";
+
+body {
+  overflow-x: hidden;
 }
 
-img {
-  display: block;
+html {
+  font-size: 100%
+}
+
+@include maxWidth($tablet-width) {
+  html {
+    font-size: 80%;
+  }
+}
+
+@include maxWidth($mobile-with) {
+  html {
+    font-size: 60%;
+  }
 }
