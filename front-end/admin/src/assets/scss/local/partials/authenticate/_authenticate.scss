@@ -1,0 +1,28 @@
+@import "config/color";
+
+.authenticate {
+  background-color: $primary-color-3000;
+  &__wrapper {
+    display: flex;
+    padding: 6.4rem 23.5rem;
+    justify-content: space-between;
+  }
+  &__text {
+    max-width: 30.9rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h5 {
+      text-align: center;
+      color: $neutral-1-color-6000;
+    }
+  }
+  &__plat-logo {
+    margin-bottom: 4.8em;
+  }
+  img {
+    width: 17.3rem;
+  }
+}

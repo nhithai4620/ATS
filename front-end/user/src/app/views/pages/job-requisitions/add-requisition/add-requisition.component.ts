@@ -23,11 +23,12 @@ export class AddRequisitionComponent implements OnInit {
         jobTittle: ['', [Validators.required]],
         jobType: ['', [Validators.required]],
         jobCategories: ['', [Validators.required]],
+        jobQuantity: ['', [Validators.required]],
         jobDescriptions: ['', [Validators.required]],
         jobRequirements: ['', [Validators.required]],
         benefits: [''],
         experience: [''],
-      }),
+      }), 
       salary: this.fb.group({
         minSalary: ['', [Validators.required]],
         maxSalary: ['', [Validators.required]],

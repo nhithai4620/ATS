@@ -1,0 +1,8 @@
+@import 'config';
+@import 'local/mixins';
+
+@include maxWidth($screen-lg) {
+    header+main {
+        padding-top: 143px;
+    }
+}
